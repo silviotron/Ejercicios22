@@ -17,8 +17,8 @@ public class Posicion implements Comparable<Posicion>{
     private int y;
 
     public Posicion(int x, int y) {
-//        check1y8(x);
-//        check1y8(y);
+        check1y8(x);
+        check1y8(y);
         this.x = x;
         this.y = y;
     }     

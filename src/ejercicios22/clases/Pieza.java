@@ -13,11 +13,11 @@ import com.google.common.base.Preconditions;
  */
 public abstract class Pieza{
     private Posicion posicion;
-    private final boolean isBlanco;
+    private final boolean Blanco;
 
-    public Pieza(Posicion posicion, boolean isBlanco) {
+    protected Pieza(Posicion posicion, boolean Blanco) {
         this.posicion = posicion;
-        this.isBlanco = isBlanco;
+        this.Blanco = Blanco;
     }
 
     public void setPosicion(Posicion p) {
@@ -28,6 +28,10 @@ public abstract class Pieza{
     public Posicion getPosicion() {
         return posicion;
     }
+
+    public boolean isBlanco() {
+        return Blanco;
+    }
     
     public boolean mover(Posicion p){
         Preconditions.checkNotNull(p);
@@ -35,9 +39,6 @@ public abstract class Pieza{
             return false;
         }
         if(this.posicion.equals(p)){
-            return false;
-        }
-        if(!isPosicionDentro(p)){
             return false;
         }
         if (checkPieza(p)) {

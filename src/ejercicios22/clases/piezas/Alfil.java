@@ -27,6 +27,13 @@ public class Alfil extends Pieza{
         }
         return false;
     }
+
+    @Override
+    public String saludar() {
+        return "soy un Alfil " + (this.isBlanco()?"Blanco":"Negro") + " Situado en la posicion " + this.getPosicion();
+    }
+    
+    
   
     
 }

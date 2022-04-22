@@ -14,6 +14,8 @@ import com.google.common.base.Preconditions;
 public abstract class Pieza{
     private Posicion posicion;
     private final boolean Blanco;
+    private static int movValidos = 0;
+    private static int movInvalidos = 0;
 
     protected Pieza(Posicion posicion, boolean Blanco) {
         this.posicion = posicion;
@@ -33,7 +35,7 @@ public abstract class Pieza{
         return Blanco;
     }
     
-    public boolean mover(Posicion p){
+    public boolean validarMovimiento(Posicion p){
         Preconditions.checkNotNull(p);
         if(this.posicion == null){
             return false;
@@ -41,14 +43,25 @@ public abstract class Pieza{
         if(this.posicion.equals(p)){
             return false;
         }
-        if (checkPieza(p)) {
-            this.posicion = p;
-            return true;
-        }
-        return false;
+        return checkPieza(p);
         
         
     }
+    public boolean mover(Posicion p){
+        if (validarMovimiento(p)) {
+            movValidos ++;
+            this.posicion = p;
+            return true;
+        }else{
+            movInvalidos ++;
+            return false;
+        }
+        
+    }
+    
+    
+    abstract public String saludar();
+    
 
     abstract public boolean checkPieza(Posicion p);   
     

@@ -39,4 +39,9 @@ public class Reina extends Pieza{
         return false;
     }    
     
+    @Override
+    public String saludar() {
+        return "soy una Reina " + (this.isBlanco()?"Blanca":"Negra") + " Situada en la posicion " + this.getPosicion();
+    }    
+    
 }

@@ -28,4 +28,9 @@ public class Torre extends Pieza{
         return false;
     }
     
+    @Override
+    public String saludar() {
+        return "soy una Torre " + (this.isBlanco()?"Blanca":"Negra") + " Situada en la posicion " + this.getPosicion();
+    }    
+    
 }

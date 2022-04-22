@@ -28,5 +28,9 @@ public class Caballo extends Pieza{
         return false;
     }
   
+    @Override
+    public String saludar() {
+        return "soy un Caballo " + (this.isBlanco()?"Blanco":"Negro") + " Situado en la posicion " + this.getPosicion();
+    }    
     
 }

@@ -29,7 +29,7 @@ public class Posicion implements Comparable<Posicion>{
 
     @Override
     public String toString() {
-        return "(" + x + ", " + y + ")";
+        return "[" + x + ", " + y + "]";
     }
 
     @Override

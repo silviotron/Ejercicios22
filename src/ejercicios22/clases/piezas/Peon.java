@@ -68,6 +68,11 @@ public class Peon extends Pieza{
             }
         }
         
+    }
+
+    @Override
+    public String saludar() {
+        return "soy un Peon " + (this.isBlanco()?"Blanco":"Negro") + " Situado en la posicion " + this.getPosicion();
     }    
   
     

@@ -6,7 +6,6 @@
 package ejercicios22.clases;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,7 +15,7 @@ import java.util.Map;
 public class Tablero {
     private Map <Posicion, Pieza> tablero;
 
-    public Tablero(List<Pieza> arrayList) {
+    public Tablero() {
         this.tablero = new HashMap<>();
     }
     

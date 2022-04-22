@@ -21,11 +21,9 @@ public class Peon extends Pieza{
 
     @Override
     protected boolean checkPieza(Posicion p) {
-        
-        if (this.getPosicion().getX() != 0) {
+        if (this.getPosicion().getX() != p.getX()) {
             return false;
         }
-        
         if (this.isBlanco()) {
             if(p.getY() == 1) {
                 return false;

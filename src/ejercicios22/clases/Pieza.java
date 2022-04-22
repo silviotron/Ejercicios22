@@ -58,6 +58,18 @@ public abstract class Pieza{
         }
         
     }
+    public boolean mover(int x, int y){
+        final Posicion p = new Posicion(x,y);
+        if (validarMovimiento(p)) {
+            movValidos ++;
+            this.posicion = p;
+            return true;
+        }else{
+            movInvalidos ++;
+            return false;
+        }
+        
+    }    
     
     
     abstract public String saludar();

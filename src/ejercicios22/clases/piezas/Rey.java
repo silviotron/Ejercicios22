@@ -23,7 +23,7 @@ public class Rey extends Pieza{
     protected boolean checkPieza(Posicion p) {
         int difX = Math.abs(this.getPosicion().getX() - p.getX());
         int difY = Math.abs(this.getPosicion().getY() - p.getY());
-        if (difX == 1 || difY == 1) {
+        if ((difX == 1 || difX == 0) && (difY == 1 || difY == 0)) {
             return true;
         }
         return false;

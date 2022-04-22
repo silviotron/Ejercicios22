@@ -5,7 +5,9 @@
  */
 package ejercicios22.clases;
 
+import com.google.common.base.Preconditions;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -16,7 +18,7 @@ public class Tablero {
     private Map <Posicion, Pieza> tablero;
 
     public Tablero() {
-        this.tablero = new HashMap<>();
+        this.tablero = new LinkedHashMap<>();
     }
     
     public void add(Pieza p){
@@ -26,7 +28,20 @@ public class Tablero {
     }
 
     private boolean isOcupada(Pieza p) {
-        return this.tablero.containsKey(p.getPosicion());
+        return !this.tablero.containsKey(p.getPosicion());
+    }
+    
+    public Pieza getPieza(int n){
+        Preconditions.checkPositionIndex(n, this.tablero.size());
+        int f = n;
+        for (Pieza p : tablero.values()) {
+            if(f == 0){
+                return p;
+            }
+            f--;
+        }
+        throw new IndexOutOfBoundsException();
+        
     }
     
     

@@ -20,7 +20,7 @@ public class Peon extends Pieza{
     }
 
     @Override
-    public boolean checkPieza(Posicion p) {
+    protected boolean checkPieza(Posicion p) {
         
         if (this.getPosicion().getX() != 0) {
             return false;

@@ -20,7 +20,7 @@ public class Reina extends Pieza{
     
     
     @Override
-    public boolean checkPieza(Posicion p) {
+    protected boolean checkPieza(Posicion p) {
         int difX = Math.abs(this.getPosicion().getX() - p.getX());
         int difY = Math.abs(this.getPosicion().getY() - p.getY());
         return checkDiagonal(difX, difY) || checkRecto(difX, difY);

@@ -63,7 +63,7 @@ public abstract class Pieza{
     abstract public String saludar();
     
 
-    abstract public boolean checkPieza(Posicion p);   
+    abstract protected boolean checkPieza(Posicion p);   
     
     private boolean isPosicionDentro(Posicion p){
         return p.getX() >= 1 || p.getX() <= 8 && p.getY() >= 1 || p.getY() <= 8;

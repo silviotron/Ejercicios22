@@ -5,10 +5,32 @@
  */
 package ejercicios22.clases;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  *
  * @author alumno
  */
 public class Tablero {
+    private Map <Posicion, Pieza> tablero;
+
+    public Tablero(List<Pieza> arrayList) {
+        this.tablero = new HashMap<>();
+    }
+    
+    public void add(Pieza p){
+        if (isOcupada(p)) {
+            this.tablero.put(p.getPosicion(), p);
+        }
+    }
+
+    private boolean isOcupada(Pieza p) {
+        return this.tablero.containsKey(p.getPosicion());
+    }
+    
+    
+    
     
 }

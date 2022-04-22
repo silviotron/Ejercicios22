@@ -19,7 +19,7 @@ public class Caballo extends Pieza{
     }
 
     @Override
-    public boolean checkPieza(Posicion p) {
+    protected boolean checkPieza(Posicion p) {
         int difX = Math.abs(this.getPosicion().getX() - p.getX());
         int difY = Math.abs(this.getPosicion().getY() - p.getY());
         if ((difX == 1 && difY == 2 )||(difX == 2 && difY == 1 ) ) {
